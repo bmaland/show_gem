@@ -1,32 +1,30 @@
 = show_gem
 
-* http://github.com/#{github_username}/#{project_name}
+* http://github.com/bmaland/show_gem
 
 == DESCRIPTION:
 
-FIX (describe your package)
-
-== FEATURES/PROBLEMS:
-
-* FIX (list of features or problems)
+Gem Command to easily display information about a ruby gem.
 
 == SYNOPSIS:
 
-  FIX (code sample of usage)
-
-== REQUIREMENTS:
-
-* FIX (list of requirements)
+    $ gem show rake
+    AUTHORS: Jim Weirich
+    DOWNLOADS: 103575
+    INFO: Rake is a Make-like program implemented in Ruby. Tasks and dependencies are specified in standard Ruby syntax.
+    NAME: rake
+    RUBYFORGE_PROJECT: rake
+    VERSION: 0.8.7
 
 == INSTALL:
 
-* FIX (sudo gem install, anything else)
+gem install show_gem
 
 == LICENSE:
 
 (The MIT License)
 
-Copyright (c) 2009 FIXME full name
+Copyright (c) 2009 Bjørn Arild Mæland
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
