@@ -1,4 +1,9 @@
-class Gem::Commands::ShowCommand < Gem::AbstractCommand
+require 'rubygems/gemcutter_utilities'
+require 'json/pure' unless defined?(JSON::JSON_LOADED)
+
+class Gem::Commands::ShowCommand < Gem::Command
+
+  include Gem::GemcutterUtilities
 
   attr_reader :rubygem
 
@@ -11,16 +16,14 @@ class Gem::Commands::ShowCommand < Gem::AbstractCommand
   end
 
   def usage
-    "#{program_name} GEM"
+    "#{program_name} [GEM]"
   end
 
   def initialize
     super 'show', description
-    add_proxy_option
   end
 
   def execute
-    setup
     show_gem
   end
 
@@ -30,21 +33,8 @@ class Gem::Commands::ShowCommand < Gem::AbstractCommand
   end
 
   def find(name)
-    require 'json/pure'
-
-    response = make_request(:get, "gems/#{name}.json")
-
-    case response
-    when Net::HTTPSuccess
-      begin
-        @rubygem = JSON.parse(response.body)
-      rescue JSON::ParserError => json_error
-        say "There was a problem parsing the data: #{json_error}"
-        terminate_interaction
-      end
-    else
-      say "This gem is currently not hosted on Gemcutter."
-      terminate_interaction
+    with_response(rubygems_api_request(:get, "api/v1/gems/#{name}.json")) do |r|
+      @rubygem = JSON.parse(r.body)
     end
   end
 
