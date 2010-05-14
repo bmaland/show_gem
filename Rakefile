@@ -9,7 +9,7 @@ begin
     s.description = <<-DESC
       Shows information about a gem, fetched from the Gemcutter site.
     DESC
-    s.version = '0.0.1'
+    s.version = '0.0.2'
     s.email = "bjorn.maeland@gmail.com"
     s.homepage = "http://github.com/bmaland/show_gem"
     s.rubyforge_project = "showgem"

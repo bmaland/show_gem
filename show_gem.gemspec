@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{show_gem}
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bj\303\270rn Arild M\303\246land"]
-  s.date = %q{2009-12-23}
+  s.date = %q{2010-05-14}
   s.description = %q{      Shows information about a gem, fetched from the Gemcutter site.
 }
   s.email = %q{bjorn.maeland@gmail.com}
@@ -17,20 +17,18 @@ Gem::Specification.new do |s|
     "README.rdoc"
   ]
   s.files = [
-    "History.txt",
-     "README.rdoc",
+    "README.rdoc",
      "Rakefile",
      "lib/rubygems/commands/show.rb",
      "lib/rubygems_plugin.rb",
      "test/test_helper.rb",
      "test/test_show_gem.rb"
   ]
-  s.has_rdoc = false
   s.homepage = %q{http://github.com/bmaland/show_gem}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{showgem}
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{Gem Command to easily display information about a ruby gem.}
 
   if s.respond_to? :specification_version then
